@@ -22,7 +22,13 @@
                 objCode = excP[1];
             }
 
-            $($el).closest(".onebox").replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
+            if (type == "books" || type == "software") {
+                //TO-DO
+            } else {
+                $($el).closest(".onebox").replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
+            }
+
+
 
         }
     }
