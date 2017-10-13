@@ -14,15 +14,17 @@
             }
 
             var type, objCode = "";
-            if (excP[1] == "books" || excP == "software") {
+            if (excP.length > 1 && (excP[1] == "books" || excP[1] == "software" || excP[1] == "store")) {
                 type = excP[1];
                 objCode = excP[2];
-            } else {
+            } else if (excP.length == 1) {
                 type = "game";
                 objCode = excP[1];
+            } else {
+                return;
             }
 
-            if (type == "books" || type == "software") {
+            if (type == "books" || type == "software" || type == "store") {
                 //TO-DO
             } else {
                 $($el).closest(".onebox").replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
