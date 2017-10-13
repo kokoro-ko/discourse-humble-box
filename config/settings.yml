@@ -1,0 +1,4 @@
+plugins:
+  humble_box_enabled:
+    default: true
+    client: true
