@@ -14,7 +14,7 @@ function initializeBox(api) {
 }
 
 export default {
-    name: "kokoro-box",
+    name: "humble-box",
     initialize(container) {
         const siteSettings = container.lookup('site-settings:main');
         if (siteSettings.humble_box_enabled) {
