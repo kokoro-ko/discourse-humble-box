@@ -9,7 +9,7 @@ function toHumbleBox($elem, settings) {
 
 function initializeBox(api) {
     var settings = api.container.lookup('site-settings:main');
-    api.decorateCooked(t => toBox($(t).find("a"), settings));
+    api.decorateCooked(t => toHumbleBox($(t).find("a"), settings));
 
 }
 
