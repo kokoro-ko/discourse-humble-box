@@ -2,7 +2,7 @@
 
     var DEFAULTS = {
         viewUrl: "https://api.kokoro-ko.de/humblebox/index.php",
-        reg: new RegExp(/^https?:\/\/(?:www\.)?humblebundle\.com\/([a-zA-Z0-9-_]{1,25})\/([a-zA-Z0-9-_]{1,25})/)
+        reg: new RegExp(/^https?:\/\/(?:www\.)?humblebundle\.com\/([a-zA-Z0-9-_]{1,25})\/?([a-zA-Z0-9-_]{1,25})?/)
     };
 
     function applyBox($el, $options) {
