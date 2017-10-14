@@ -9,7 +9,7 @@
         var href = $($el).attr("href");
         if (DEFAULTS.reg.test(href)) {
             var excP = DEFAULTS.reg.exec(href);
-            if (result == null) {
+            if (excP == null) {
                 return;
             }
 
@@ -18,7 +18,7 @@
                 type = excP[1];
                 objCode = excP[2];
             } else if (excP.length == 1) {
-                type = "game";
+                type = "games";
                 objCode = excP[1];
             } else {
                 return;
