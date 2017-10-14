@@ -6,7 +6,7 @@
     };
 
     function applyBox($el, $options) {
-        var href = $(obj).attr("href");
+        var href = $($el).attr("href");
         if (DEFAULTS.reg.test(href)) {
             var excP = DEFAULTS.reg.exec(href);
             if (result == null) {
