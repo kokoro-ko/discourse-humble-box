@@ -8,10 +8,11 @@
     function applyBox($el, $options, $old) {
         $old = (typeof $old === 'undefined') ? false : $old;
         var href = $($el).attr("href");
-        var type, objCode = "";
+        var type = null
+        var objCode = "";
 
         if (!DEFAULTS.reg.test(href)){
-            type = "invalid_type";
+            type = null;
         }else if($old){
             type = "old_url";
         }else {
@@ -25,7 +26,7 @@
 
             //TO-DO: books, software, store, bundle
             if (type != "games") {
-                type = "invalid_type";
+                type = null;
             }
         }
 
@@ -36,8 +37,11 @@
         }else{
             rpo = $($el);
         }
+
+        if(type != null){
+            $(rpo).replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
+        }
         
-        $(rpo).replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
     }
 
     $.fn.linkToHumbleBox = function(options, oldFlag) {
