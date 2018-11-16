@@ -1,7 +1,7 @@
-import { withPluginApi, decorateCooked } from 'discourse/lib/plugin-api';
+import { withPluginApi, decorateCooked, decorateWidget } from 'discourse/lib/plugin-api';
 
 function toHumbleBox($e, settings) {
-    $elem = $($e).find('a');
+        $elem = $($e).find('a');
         $date = $($e).find('.cooked-time-inlay').html();
         $today = new Date();
         $lastMonth = $today.setMonth($today.getMonth()-1);
