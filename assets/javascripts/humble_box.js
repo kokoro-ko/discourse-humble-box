@@ -30,7 +30,7 @@
         }
 
         //has onebox
-        let replaceobject=null;
+        var replaceobject=null;
         if($($el).closest(".onebox").length > 0){
             replaceobject = $($el).closest(".onebox");
         }else{
