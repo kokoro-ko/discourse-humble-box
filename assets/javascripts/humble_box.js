@@ -30,14 +30,14 @@
         }
 
         //has onebox
-        var replaceobject=null;
+        var rpo=null;
         if($($el).closest(".onebox").length > 0){
-            replaceobject = $($el).closest(".onebox");
+            rpo = $($el).closest(".onebox");
         }else{
-            replaceobject = $($el);
+            rpo = $($el);
         }
         
-        $(replaceobject).replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
+        $(rpo).replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
     }
 
     $.fn.linkToHumbleBox = function(options, oldFlag) {
