@@ -14,7 +14,7 @@ function toHumbleBox($e, settings) {
     if ($elem == undefined || $elem == null) { return; }
     $($elem).each(function(i, el) {
         if($(el).is("a")){
-            $(el).tst(settings, old);    
+            $(el).linkToHumbleBox(settings, old);    
         }
     });        
 }
