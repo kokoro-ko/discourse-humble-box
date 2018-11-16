@@ -11,6 +11,10 @@ function toHumbleBox($e, settings) {
             $($elem).each(function(i, el) {
                 $(el).linkToHumbleBox(settings);
             });
+        }else{
+            $($elem).each(function(i, el) {
+                $(el).linkToHumbleBox(settings,true);
+            });
         }
 }
 
