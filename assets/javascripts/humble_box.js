@@ -29,7 +29,15 @@
             }
         }
 
-        $($el).closest(".onebox").replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
+        //has onebox
+        let replaceobject=null;
+        if($($el).closest(".onebox").length > 0){
+            replaceobject = $($el).closest(".onebox");
+        }else{
+            replaceobject = $($el);
+        }
+        
+        $(replaceobject).replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
     }
 
     $.fn.linkToHumbleBox = function(options, oldFlag) {
