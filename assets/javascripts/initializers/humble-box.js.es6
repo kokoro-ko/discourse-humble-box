@@ -6,16 +6,13 @@ function toHumbleBox($e, settings) {
         let $today = new Date();
         let $lastMonth = $today.setMonth($today.getMonth()-1);
         let $postDate = new Date($date).getTime();
-        if(!isNaN($postDate) && $lastMonth <= $postDate ){
-            if ($elem == undefined || $elem == null || !$($elem).is("a")) { return; }
-            $($elem).each(function(i, el) {
-                $(el).linkToHumbleBox(settings);
-            });
-        }else{
-            $($elem).each(function(i, el) {
-                $(el).linkToHumbleBox(settings,true);
-            });
-        }
+        let old = false;
+        if(!isNaN($postDate) && $lastMonth <= $postDate ){ old = true; }else { old = false; }
+        if ($elem == undefined || $elem == null || !$($elem).is("a")) { return; }
+        $($elem).each(function(i, el) {
+            $(el).linkToHumbleBox(settings, old);
+        });
+        
 }
 
 function initializeBox(api) {
