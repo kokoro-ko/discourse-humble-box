@@ -1,16 +1,27 @@
 import { withPluginApi, decorateCooked } from 'discourse/lib/plugin-api';
 
-function toHumbleBox($elem, settings) {
-    if ($elem == undefined || $elem == null || !$($elem).is("a")) { return; }
-    $($elem).each(function(i, el) {
-        $(el).linkToHumbleBox(settings);
-    });
+function toHumbleBox($e, settings) {
+    $elem = $($e).find('a');
+        $date = $($e).find('.cooked-time-inlay').html();
+        $today = new Date();
+        $lastMonth = $today.setMonth($today.getMonth()-1);
+        $postDate = new Date($date).getTime();
+        if(!isNaN($postDate) && $lastMonth <= $postDate ){
+            if ($elem == undefined || $elem == null || !$($elem).is("a")) { return; }
+            $($elem).each(function(i, el) {
+                $(el).linkToHumbleBox(settings);
+            });
+        }
 }
 
 function initializeBox(api) {
     var settings = api.container.lookup('site-settings:main');
-    api.decorateCooked(t => toHumbleBox($(t).find("a"), settings));
+    api.decorateWidget('post-contents:after-cooked', function (dec) {
+        dec.attrs.cooked = dec.attrs.cooked + "<span class='cooked-time-inlay' style='display:none;'>"+dec.attrs.created_at+"</span>";
+        return;
+    })
 
+    api.decorateCooked(t => toHumbleBox($(t), settings));
 }
 
 export default {
