@@ -5,7 +5,8 @@
         reg: new RegExp(/^https?:\/\/(?:www\.)?humblebundle\.com\/([a-zA-Z0-9_-]{1,45})\/?([a-zA-Z0-9_-]{1,45})?/)
     };
 
-    function applyBox($el, $options, $old = false) {
+    function applyBox($el, $options, $old) {
+        $old = (typeof $old === 'undefined') ? false : $old;
         var href = $($el).attr("href");
         var type, objCode = "";
 
