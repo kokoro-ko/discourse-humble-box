@@ -1,18 +1,22 @@
 import { withPluginApi, decorateCooked, decorateWidget } from 'discourse/lib/plugin-api';
 
 function toHumbleBox($e, settings) {
-        let $elem = $($e).find('a');
-        let $date = $($e).find('.cooked-time-inlay').html();
-        let $today = new Date();
-        let $lastMonth = $today.setMonth($today.getMonth()-1);
-        let $postDate = new Date($date).getTime();
-        let old = false;
-        if(!isNaN($postDate) && $lastMonth <= $postDate ){ old = true; }else { old = false; }
-        if ($elem == undefined || $elem == null || !$($elem).is("a")) { return; }
-        $($elem).each(function(i, el) {
-            $(el).linkToHumbleBox(settings, old);
-        });
-        
+    let $elem = $($e).find('a');
+    let $date = $($e).find('.cooked-time-inlay').html();
+    let today = new Date();
+    let date = new Date(String($date));
+    let diff =(today.getTime() - date.getTime()) / 1000;
+    diff = diff / (60 * 60 * 24 * 10 * 3);
+    let diffMonths = Math.abs(Math.round(diff));
+    let old = false;
+    console.log($date);
+    if(!isNaN(date) && diffMonths > 0 ){ old = true; }else { old = false; }
+    if ($elem == undefined || $elem == null) { return; }
+    $($elem).each(function(i, el) {
+        if($(el).is("a")){
+            $(el).tst(settings, old);    
+        }
+    });        
 }
 
 function initializeBox(api) {
