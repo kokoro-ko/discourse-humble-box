@@ -1,4 +1,4 @@
-import { withPluginApi, decorateCooked, decorateWidget } from 'discourse/lib/plugin-api';
+import { withPluginApi } from 'discourse/lib/plugin-api';
 
 function toHumbleBox($e, settings) {
     let $elem = $($e).find('a');
@@ -9,14 +9,13 @@ function toHumbleBox($e, settings) {
     diff = diff / (60 * 60 * 24 * 10 * 3);
     let diffMonths = Math.abs(Math.round(diff));
     let old = false;
-    console.log($date);
     if(!isNaN(date) && diffMonths > 0 ){ old = true; }else { old = false; }
-    if ($elem == undefined || $elem == null) { return; }
+    if ($elem === undefined || $elem === null) { return; }
     $($elem).each(function(i, el) {
         if($(el).is("a")){
             $(el).linkToHumbleBox(settings, old);    
         }
-    });        
+    });
 }
 
 function initializeBox(api) {
@@ -24,7 +23,7 @@ function initializeBox(api) {
     api.decorateWidget('post-contents:after-cooked', function (dec) {
         dec.attrs.cooked = dec.attrs.cooked + "<span class='cooked-time-inlay' style='display:none;'>"+dec.attrs.created_at+"</span>";
         return;
-    })
+    });
 
     api.decorateCooked(t => toHumbleBox($(t), settings));
 }
