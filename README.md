@@ -3,6 +3,8 @@
 
 # discourse-humble-box
 
+[![Build Status](https://travis-ci.org/kokoro-ko/discourse-kokoro-box.svg?branch=master)](https://travis-ci.org/kokoro-ko/discourse-kokoro-box)
+
 This plugin for Discourse uses the discourse-api to decorate the cooked-posts. Primary usage is for properly embedding [Humblebundle.com](https://humblebundle.com/)-Links in Discourse posts and parsing them into better looking iframes.
 
 #### Features:
