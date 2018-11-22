@@ -7,7 +7,7 @@ function toHumbleBox($e, settings) {
     let date = new Date(String($date));
     let diff =(today.getTime() - date.getTime()) / 1000;
     diff = diff / (60 * 60 * 24 * 10 * 3);
-    let diffMonths = Math.abs(Math.round(diff));
+    let diffMonths = Math.abs(Math.floor(diff));
     let old = false;
     if(!isNaN(date) && diffMonths > 0 ){ old = true; }else { old = false; }
     if ($elem === undefined || $elem === null) { return; }
