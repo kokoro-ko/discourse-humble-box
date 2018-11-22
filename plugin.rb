@@ -1,4 +1,4 @@
-# name: Humble-Box
+# name: discourse-humble-box
 # about: Adds support for properly embedding Humblebundle-Links
 # version: 2.0
 # authors: Armin Seidling
