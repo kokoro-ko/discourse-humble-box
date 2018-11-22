@@ -1,6 +1,6 @@
 # name: Humble-Box
 # about: Adds support for properly embedding Humblebundle-Links
-# version: 1.0
+# version: 2.0
 # authors: Armin Seidling
 # url: https://github.com/kokoro-ko/discourse-humble-box
 

@@ -16,6 +16,10 @@ This plugin for Discourse uses the discourse-api to decorate the cooked-posts. P
 - Single-Games
 - Monthly
 
+#### Coming Settings:
+- Checkboxes for supporting types
+- Input for API-Endpoint
+
 ## Installation
 
 Add the plugin's repository URL to your container's `app.yml` file, for example:
