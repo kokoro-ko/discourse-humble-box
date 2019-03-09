@@ -39,7 +39,7 @@
         }
 
         if(type != null){
-            $(rpo).replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="150"></iframe>');
+            $(rpo).replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + '" frameborder="0" width="100%" height="160"></iframe>');
         }
         
     }
