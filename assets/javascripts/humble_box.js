@@ -23,7 +23,7 @@
             if(excP.length > 2){ type = excP[1]; objCode = excP[2]; }else{ return; }
 
             //TO-DO: store, monthly
-            if (type != "games" && type != "books" && type != "software" && type != "comics") {
+            if (type != "games" && type != "books" && type != "software" && type != "comics" && type != "store") {
                 type = null;
             }
         }
