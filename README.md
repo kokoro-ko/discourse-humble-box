@@ -9,10 +9,11 @@ This plugin for Discourse uses the discourse-api to decorate the cooked-posts. P
 
 #### Features:
 - Gamebundles
-
-#### Coming:
 - Bookbundles
 - Softwarebundles
+- Comicbundles
+
+#### Coming:
 - Single-Games
 - Monthly
 
