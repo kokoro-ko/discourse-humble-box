@@ -9,13 +9,10 @@
         $old = (typeof $old === 'undefined') ? false : $old;
         var href = $($el).attr("href");
         var type = null
-        var isOld = false;
         var objCode = "";
 
         if (!DEFAULTS.reg.test(href)){
             type = null;
-        }else if($old){
-            isOld = true;
         }else {
 
             var excP = DEFAULTS.reg.exec(href);
@@ -40,7 +37,7 @@
         }
 
         if(type != null){
-            $(rpo).replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + ( (isOld) ? "isOld=old_url" : "") +'" frameborder="0" width="100%" height="160"></iframe>');
+            $(rpo).replaceWith('<iframe src="' + DEFAULTS.viewUrl + '?type=' + type + '&urlCode=' + objCode + ( ($old) ? '&isOld=old_url' : '') +'" frameborder="0" width="100%" height="160"></iframe>');
         }
         
     }
